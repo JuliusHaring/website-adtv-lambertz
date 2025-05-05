@@ -4,8 +4,11 @@ export default function Header() {
   return (
     <div className="navbar bg-base-100 shadow-md">
       <div className="flex-1">
-        <Link className="btn btn-ghost text-xl" href="/">
-          Tanzschule
+        <Link
+          href="/"
+          className="btn text-xl font-bold px-6 py-2 border-none rounded-xl bg-gradient-to-br from-primary via-secondary via-accent via-info to-warning shadow-md hover:brightness-110 transition"
+        >
+          ADTV Tanzschule Lambertz
         </Link>
       </div>
       <div className="flex-none">

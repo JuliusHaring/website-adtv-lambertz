@@ -1,18 +1,28 @@
+"use client";
+
 import Headline from "../../../lib/components/atoms/Headline";
 
 export default function Philosophie() {
   return (
-    <>
-      <Headline level={2}>Sprechen Sie Walzer?</Headline>
-      Tanzen ist eine Sprache, die keine Grenzen kennt. Eine Sprache, die jeder
-      sprechen sollte. Als ADTV Tanzlehrerin ist es für mich besonders wichtig,
-      dass sich jeder Kursteilnehmer beim Tanzen wohl fühlt. Rücksichtnahme
-      aufeinander ist beim Tanzen ein hohes Gut, da beide Partner in besonderer
-      Weise voneinander abhängig sind. Miteinander lachen, Erfolgserlebnisse
-      teilen, Selbstbestätigung erfahren, Konzentration auf sich und seinen
-      Tanzpartner. Dieses nonverbale Zwiegespräch wie selbstverständlich im
-      Unterricht zu vermitteln ist mein tägliches Bestreben. Ihre Astrid
-      Lambertz
-    </>
+    <section>
+      <div className="relative ax-w-3xl mx-auto px-6 py-20 text-center space-y-6">
+        <Headline level={1} variant="primary">
+          Sprechen Sie Walzer?
+        </Headline>
+        <p className="text-lg leading-relaxed">
+          Tanzen ist eine Sprache, die keine Grenzen kennt – eine Sprache, die
+          jeder sprechen sollte. Rücksichtnahme, Vertrauen und Freude stehen im
+          Mittelpunkt jedes Tanzkurses.
+        </p>
+        <p className="italic">
+          „Dieses nonverbale Zwiegespräch wie selbstverständlich im Unterricht
+          zu vermitteln ist mein tägliches Bestreben.“
+          <br />
+          <span className="not-italic font-semibold">
+            – Ihre Astrid Lambertz
+          </span>
+        </p>
+      </div>
+    </section>
   );
 }
