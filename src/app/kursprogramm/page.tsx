@@ -1,4 +1,4 @@
-import Headline from "../../../lib/components/atoms/Headline";
+import Headline from "@/lib/components/atoms/Headline";
 
 export default function Kursprogramm() {
   const pageVariant = "secondary";

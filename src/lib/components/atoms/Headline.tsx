@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import { DaisyVariants } from "../../types";
+import { DaisyVariants } from "@/lib/types";
 
 type HeadlineProps = {
   level?: 1 | 2 | 3 | 4 | 5 | 6;

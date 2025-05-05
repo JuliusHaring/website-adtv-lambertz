@@ -1,5 +1,5 @@
+import { DaisyVariants } from "@/lib/types";
 import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
-import { DaisyVariants } from "../../types";
 
 type BaseProps = {
   variant?: DaisyVariants;

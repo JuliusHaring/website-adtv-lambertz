@@ -1,4 +1,4 @@
-import Headline from "../../../../lib/components/atoms/Headline";
+import Headline from "@/lib/components/atoms/Headline";
 import Link from "next/link";
 
 export default function Datenschutz() {

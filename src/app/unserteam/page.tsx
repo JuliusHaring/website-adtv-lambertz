@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Headline from "../../../lib/components/atoms/Headline";
+import Headline from "@/lib/components/atoms/Headline";
 
 export default function UnserTeam() {
   const variant = "accent";

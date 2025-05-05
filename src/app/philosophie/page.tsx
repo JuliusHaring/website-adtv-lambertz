@@ -1,6 +1,6 @@
 "use client";
 
-import Headline from "../../../lib/components/atoms/Headline";
+import Headline from "@/lib/components/atoms/Headline";
 
 export default function Philosophie() {
   return (

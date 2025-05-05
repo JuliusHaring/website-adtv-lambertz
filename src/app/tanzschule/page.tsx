@@ -1,5 +1,4 @@
-import Headline from "../../../lib/components/atoms/Headline";
-import Link from "next/link";
+import Headline from "@/lib/components/atoms/Headline";
 import Image from "next/image";
 
 export default function Tanzschule() {

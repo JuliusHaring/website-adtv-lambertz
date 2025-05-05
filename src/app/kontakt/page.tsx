@@ -1,6 +1,6 @@
 "use client";
 
-import Headline from "../../../lib/components/atoms/Headline";
+import Headline from "@/lib/components/atoms/Headline";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -9,7 +9,7 @@ export default function Kontakt() {
   const [agreed, setAgreed] = useState(false);
 
   return (
-    <section className="px-4 py-8 max-w-3xl mx-auto space-y-8">
+    <section className="space-y-6">
       <Headline level={2} variant={variant}>
         Kontakt
       </Headline>

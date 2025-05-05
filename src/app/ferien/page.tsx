@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import Headline from "../../../lib/components/atoms/Headline";
+import Headline from "@/lib/components/atoms/Headline";
 import "./calendar.css"; // custom style overrides
 
 export default function Ferien() {
