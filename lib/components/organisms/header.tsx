@@ -24,6 +24,9 @@ export default function Header() {
         <Link className="btn btn-ghost btn-warning" href="/ferien">
           Ferien
         </Link>
+        <Link className="btn btn-ghost btn-primary" href="/kontakt">
+          Kontakt
+        </Link>
       </div>
     </div>
   );

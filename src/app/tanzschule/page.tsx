@@ -71,9 +71,9 @@ export default function Tanzschule() {
 
       <div className="space-y-4">
         <div>
-          <h4 className="font-semibold">
+          <Headline level={4} variant={variant}>
             Aus Aachen Innenstadt kommend (Alleenring):
-          </h4>
+          </Headline>
           <ul className="list-disc list-inside space-y-1">
             <li>Abbiegen in die Krefelder Straße (B57)</li>
             <li>Erste Möglichkeit links in den Soerser Weg</li>
@@ -83,7 +83,9 @@ export default function Tanzschule() {
         </div>
 
         <div>
-          <h4 className="font-semibold">Von der Autobahn A4 kommend:</h4>
+          <Headline level={4} variant={variant}>
+            Von der Autobahn A4 kommend:
+          </Headline>
           <ul className="list-disc list-inside space-y-1">
             <li>Ausfahrt: Aachen Zentrum</li>
             <li>Auf die B57 Richtung Aachen</li>
