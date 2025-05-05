@@ -1,104 +1,70 @@
+"use client";
+
+import { useMemo } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 import Headline from "../../../lib/components/atoms/Headline";
+import "./calendar.css"; // custom style overrides
 
 export default function Ferien() {
   const variant = "warning";
 
+  const closedDates = useMemo(
+    () => [
+      { from: "2024-12-23", to: "2025-01-06", label: "Weihnachtsferien" },
+      { from: "2025-02-27", to: "2025-03-04", label: "Karneval" },
+      { from: "2025-03-20", to: "2025-03-20" },
+      { from: "2025-03-30", to: "2025-03-30" },
+      { from: "2025-04-07", to: "2025-04-21" },
+      { from: "2025-05-01", to: "2025-05-01", label: "Maifeiertag" },
+      { from: "2025-05-21", to: "2025-05-21" },
+      { from: "2025-05-29", to: "2025-06-01", label: "Christi Himmelfahrt" },
+      { from: "2025-06-08", to: "2025-06-09", label: "Pfingsten" },
+      { from: "2025-06-19", to: "2025-06-19", label: "Fronleichnam" },
+      { from: "2025-06-30", to: "2025-07-18" },
+      { from: "2025-07-26", to: "2025-07-27" },
+      { from: "2025-09-08", to: "2025-09-21", label: "Sommerurlaub" },
+      {
+        from: "2025-10-03",
+        to: "2025-10-03",
+        label: "Tag der Deutschen Einheit",
+      },
+      { from: "2025-11-01", to: "2025-11-01", label: "Allerheiligen" },
+      { from: "2025-11-03", to: "2025-11-16" },
+      { from: "2025-12-22", to: "2026-01-06", label: "Weihnachtsferien" },
+    ],
+    [],
+  );
+
+  const isClosed = (date: Date) => {
+    return closedDates.some(({ from, to }) => {
+      const start = new Date(from);
+      const end = new Date(to);
+      return date >= start && date <= end;
+    });
+  };
+
   return (
     <section>
       <Headline level={2} variant={variant}>
-        Ferien
+        Ferienkalender
       </Headline>
 
-      <p className="font-semibold">
-        Dezember 2025 – Januar 2026 SCHLIEßUNGSZEITEN
+      <p className="text-base">
+        Die unten hervorgehobenen Tage sind Schließzeiten der Tanzschule.
       </p>
 
-      <p>Die Tanzschule ist zu folgenden Zeiten geschlossen:</p>
-
-      <div className="overflow-x-auto">
-        <table className="table table-zebra">
-          <thead>
-            <tr>
-              <th>Datum</th>
-              <th>Erläuterung</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Mo, 23.12.24 – Mo, 06.01.25</td>
-              <td>Weihnachtsferien</td>
-            </tr>
-            <tr>
-              <td>Do, 27.02.25 – Di, 04.03.25</td>
-              <td>Karneval</td>
-            </tr>
-            <tr>
-              <td>Do, 20.03.25</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>So, 30.03.25</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Mo, 07.04.25 – Mo, 21.04.25</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Do, 01.05.25</td>
-              <td>Maifeiertag</td>
-            </tr>
-            <tr>
-              <td>Mi, 21.05.25</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Do, 29.05.25 – So, 01.06.25</td>
-              <td>Christi Himmelfahrt</td>
-            </tr>
-            <tr>
-              <td>So, 08.06.25 & Mo, 09.06.25</td>
-              <td>Pfingsten</td>
-            </tr>
-            <tr>
-              <td>Do, 19.06.25</td>
-              <td>Fronleichnam</td>
-            </tr>
-            <tr>
-              <td>Mo, 30.06.25 – Fr, 18.07.25</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Sa, 26.07.25 & So, 27.07.25</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Mo, 08.09.25 – So, 21.09.25</td>
-              <td>Sommerurlaub</td>
-            </tr>
-            <tr>
-              <td>Fr, 03.10.25</td>
-              <td>Tag der Deutschen Einheit</td>
-            </tr>
-            <tr>
-              <td>Sa, 01.11.25</td>
-              <td>Allerheiligen</td>
-            </tr>
-            <tr>
-              <td>Mo, 03.11.25 – So, 16.11.25</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Mo, 22.12.25 – Di, 06.01.26</td>
-              <td>Weihnachtsferien</td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="bg-base-100 rounded-lg shadow p-4 fill my-10">
+        <Calendar
+          tileClassName={({ date }) =>
+            isClosed(date) ? "holiday-tile" : undefined
+          }
+          selectRange={false}
+        />
       </div>
 
-      <p className="italic text-sm text-gray-600">
-        In den Schließungszeiten und an den oben genannten Feiertagen findet
-        kein Unterricht statt.
+      <p className="text-sm text-gray-500 italic">
+        An allen markierten Tagen findet kein Unterricht statt.
       </p>
     </section>
   );
