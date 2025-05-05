@@ -10,7 +10,7 @@ export default function Header() {
       <div className="flex-1">
         <Link
           href="/"
-          className="btn text-xl font-bold px-4 py-2 border-none rounded-xl bg-gradient-to-br from-primary via-secondary via-accent via-info to-warning text-white shadow-md hover:brightness-110 transition"
+          className="lg:text-3xl text-2xl font-bold bg-gradient-to-br from-primary via-secondary via-accent via-info to-warning bg-clip-text text-transparent"
         >
           ADTV Tanzschule Lambertz
         </Link>

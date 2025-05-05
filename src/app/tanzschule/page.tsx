@@ -5,7 +5,7 @@ export default function Tanzschule() {
   const variant = "info";
 
   return (
-    <section className="px-4 py-8 max-w-5xl mx-auto space-y-10">
+    <section>
       <Headline level={2} variant={variant}>
         ADTV Tanzschule Aachen
       </Headline>
