@@ -29,11 +29,12 @@ export default function Impressum() {
         <p>Telefon: 0241 4465225</p>
         <p>Mobil: 0163 1976380</p>
         <p>
+          E-Mail:
           <Link
             href="mailto:info@tanzschule-lambertz.de"
             className="link link-neutral"
           >
-            E-Mail an die ADTV Tanzschule Lambertz versenden
+            info@tanzschule-lambertz.de
           </Link>
         </p>
       </div>
@@ -90,11 +91,12 @@ export default function Impressum() {
           Grafik- & Mediendesignerin
         </p>
         <p>
+          E-Mail:
           <Link
             href="mailto:annett.klabis@email.de"
             className="link link-neutral"
           >
-            E-Mail an Annett Klabis versenden
+            annett.klabis@email.de
           </Link>
         </p>
       </div>
