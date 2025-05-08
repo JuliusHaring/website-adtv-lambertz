@@ -44,6 +44,18 @@ export default function Footer() {
           </a>
         </div>
       </div>
+
+      <div className="mt-10 text-center text-sm text-base-content/60">
+        Powered by{" "}
+        <a
+          href="https://www.juliusharing.com"
+          className="link link-hover"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          www.juliusharing.com
+        </a>
+      </div>
     </footer>
   );
 }
