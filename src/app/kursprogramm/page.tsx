@@ -31,7 +31,7 @@ export default function Kursprogramm() {
         {kurse.map(({ wochentag, uhrzeit, beginn }) => (
           <div
             key={`${wochentag}-${uhrzeit}`}
-            className="bg-base-100 border border-base-200 rounded-xl p-4 shadow-md"
+            className="bg-base-100 border border-base-200 rounded-lg p-4 shadow-md"
           >
             <p className="text-lg font-semibold">{wochentag}</p>
             <p>

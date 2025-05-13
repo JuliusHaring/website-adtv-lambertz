@@ -6,7 +6,7 @@ type Props = {
 export default function MapEmbed({ src, className }: Props) {
   return (
     <div
-      className={`w-full h-100 overflow-hidden rounded-xl shadow-lg ${className ?? ""}`}
+      className={`w-full h-100 overflow-hidden rounded-lg shadow-lg ${className ?? ""}`}
     >
       <iframe
         src={src}

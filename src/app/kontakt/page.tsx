@@ -51,7 +51,7 @@ export default function Kontakt() {
         </p>
       </div>
 
-      <div className="bg-base-100 shadow-md rounded-xl">
+      <div className="bg-base-100 shadow-md rounded-lg">
         <form className="p-6" noValidate>
           <fieldset className="flex gap-6">
             <legend className="text-sm font-medium">Anrede:</legend>

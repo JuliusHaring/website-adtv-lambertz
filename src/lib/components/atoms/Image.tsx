@@ -21,7 +21,7 @@ export function Image({ className, clickToOpen = true, ...props }: Props) {
   }, [isOpen]);
 
   const baseClass =
-    "rounded-xl transition-transform duration-300 ease-in-out hover:scale-105";
+    "rounded-lg transition-transform duration-300 ease-in-out hover:scale-105";
   const clickableClass = clickToOpen ? " cursor-zoom-in" : "";
   const finalClass = `${baseClass}${clickableClass} ${className ?? ""}`.trim();
 
@@ -46,7 +46,7 @@ export function Image({ className, clickToOpen = true, ...props }: Props) {
               {...openProps}
               width={800}
               height={800}
-              className="w-full h-auto rounded-xl cursor-zoom-out"
+              className="w-full h-auto rounded-lg cursor-zoom-out"
               onClick={() => setIsOpen(false)}
             />
           </div>

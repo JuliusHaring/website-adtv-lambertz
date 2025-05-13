@@ -56,7 +56,7 @@ export default function Ferien() {
       <p>Die unten hervorgehobenen Tage sind Schließzeiten der Tanzschule.</p>
 
       <div className="flex justify-center">
-        <div className="w-full max-w-sm lg:max-w-md shadow-xl p-3 rounded-xl">
+        <div className="w-full max-w-sm lg:max-w-md shadow-xl p-3 rounded-lg">
           <Calendar
             tileClassName={({ date }) =>
               isClosed(date) ? "holiday-tile" : undefined
