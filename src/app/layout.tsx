@@ -36,16 +36,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-        <div className="fixed inset-0 z-0 overflow-hidden">
+        <div className="fixed inset-0 z-0 overflow-hidden bg-white">
           <video
             className="w-full h-full object-cover"
-            src="/chacha.mp4"
+            src="/chacha.webm"
             autoPlay
             muted
             loop
             playsInline
+            preload="auto"
           />
-          <div className="absolute inset-0 bg-white/10 backdrop-blur-md" />
+          <div className="absolute inset-0 bg-white/5 backdrop-blur-md" />
         </div>
 
         <div className="relative z-10 min-h-screen flex flex-col">
