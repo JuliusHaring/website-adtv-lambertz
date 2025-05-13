@@ -5,10 +5,10 @@
 
 .react-calendar__tile {
   padding: 0.5rem 0.25rem;
-  border-radius: 0.375em;
 }
 
 .holiday-tile {
   background-color: red; /* uses DaisyUI --wa for warning */
   color: white;
+  border-radius: 0;
 }

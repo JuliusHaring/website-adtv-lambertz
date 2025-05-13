@@ -12,7 +12,7 @@ export default function Ferien() {
 
   const parseLocalDate = (iso: string) => {
     const [y, m, d] = iso.split("-").map(Number);
-    return new Date(y, m - 1, d);
+    return new Date(y, m - 1, d, 0, 0, 0, 0);
   };
 
   const closedDates = useMemo(
@@ -47,8 +47,11 @@ export default function Ferien() {
     [],
   );
 
-  const isClosed = (date: Date) =>
-    closedDates.some(({ from, to }) => date >= from && date <= to);
+  const isClosed = (date: Date) => {
+    const day = new Date(date);
+    day.setHours(0, 0, 0, 0);
+    return closedDates.some(({ from, to }) => day >= from && day <= to);
+  };
 
   const formatDate = (date: Date) =>
     date.toLocaleDateString("de-DE", {
