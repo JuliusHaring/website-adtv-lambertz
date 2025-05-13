@@ -10,7 +10,7 @@ export default function Kursprogramm() {
   ];
 
   return (
-    <section>
+    <section className="text-base-content px-4 w-full max-w-3xl mx-auto space-y-6">
       <Headline level={2} variant={pageVariant}>
         Einsteiger
       </Headline>
@@ -23,38 +23,33 @@ export default function Kursprogramm() {
 
       <p>
         Sie bestimmen die Länge des Kurses. Durch die monatliche Zahlweise in
-        Kombination mit unseren kurzen Kündigungsfristen (zu den{" "}
-        <a className="link link-secondary" href="/footer/agb">
+        Kombination mit unseren kurzen Kündigungsfristen (
+        <Link className="link link-secondary" href="/footer/agb">
           AGB
-        </a>
+        </Link>
         ) entscheiden Sie selber, ob Ihr Kurs 4 Wochen oder 3 Monate dauert.
       </p>
 
-      <div className="overflow-x-auto">
-        <table className="table table-zebra">
-          <thead>
-            <tr>
-              <th>Wochentag</th>
-              <th>Uhrzeit</th>
-              <th>Kursbeginn</th>
-              <th>Anmeldung</th>
-            </tr>
-          </thead>
-          <tbody>
-            {kurse.map(({ wochentag, uhrzeit, beginn }) => (
-              <tr key={`${wochentag}-${uhrzeit}`}>
-                <td>{wochentag}</td>
-                <td>{uhrzeit}</td>
-                <td>{beginn}</td>
-                <td>
-                  <Link href="/kontakt" className="btn btn-secondary btn-sm">
-                    Anmelden →
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {kurse.map(({ wochentag, uhrzeit, beginn }) => (
+          <div
+            key={`${wochentag}-${uhrzeit}`}
+            className="bg-base-100 border border-base-200 rounded-xl p-4 shadow-md space-y-2"
+          >
+            <p className="text-lg font-semibold text-base-content">
+              {wochentag}
+            </p>
+            <p>
+              <span className="font-medium">Uhrzeit:</span> {uhrzeit}
+            </p>
+            <p>
+              <span className="font-medium">Beginn:</span> {beginn}
+            </p>
+            <Link href="/kontakt" className="btn btn-secondary btn-sm mt-2">
+              Anmelden →
+            </Link>
+          </div>
+        ))}
       </div>
 
       <Headline level={3} variant={pageVariant}>
