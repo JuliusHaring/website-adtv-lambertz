@@ -52,13 +52,19 @@ export default function Kontakt() {
       </div>
 
       <div className="bg-base-100 shadow-md rounded-lg">
-        <form className="p-6" noValidate>
+        <form
+          className="p-6 space-y-6"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+        >
+          <input type="hidden" name="access_key" value="CONTACT_WEB3FORMS_API_KEY" />
+
           <fieldset className="flex gap-6">
             <legend className="text-sm font-medium">Anrede:</legend>
             <label className="label gap-2 cursor-pointer">
               <input
                 type="radio"
-                name="gender"
+                name="Anrede"
                 value="Herr"
                 className="radio radio-primary"
               />
@@ -67,7 +73,7 @@ export default function Kontakt() {
             <label className="label gap-2 cursor-pointer">
               <input
                 type="radio"
-                name="gender"
+                name="Anrede"
                 value="Frau"
                 className="radio radio-primary"
               />
@@ -75,44 +81,42 @@ export default function Kontakt() {
             </label>
           </fieldset>
 
-          <div className="grid gap-4 sm:grid-cols-2 my-6">
+          <div className="grid gap-4 sm:grid-cols-2">
             <input
               type="text"
-              name="name"
+              name="Name"
               placeholder="Name*"
               required
               className="input input-bordered w-full"
             />
             <input
               type="text"
-              name="vorname"
+              name="Vorname"
               placeholder="Vorname*"
               required
               className="input input-bordered w-full"
             />
             <input
               type="text"
-              name="strasse"
+              name="Straße"
               placeholder="Straße"
               className="input input-bordered w-full"
             />
             <input
               type="text"
-              name="plz"
+              name="PLZOrt"
               placeholder="PLZ / Ort"
-              pattern="^[0-9]{5}.*"
               className="input input-bordered w-full"
             />
             <input
               type="tel"
-              name="telefon"
+              name="Telefon"
               placeholder="Telefon"
-              pattern="^(\+49|0)[0-9 ]{7,}$"
               className="input input-bordered w-full"
             />
             <input
               type="email"
-              name="email"
+              name="E-Mail"
               placeholder="E-Mail*"
               required
               className="input input-bordered w-full"
@@ -120,18 +124,16 @@ export default function Kontakt() {
           </div>
 
           <textarea
-            name="nachricht"
+            name="Nachricht"
             placeholder="Ihre Nachricht*"
             required
-            className="textarea textarea-bordered w-full min-h-[8rem] mb-6"
+            className="textarea textarea-bordered w-full min-h-[8rem]"
           />
 
-          <label className="flex items-start gap-3 mb-6">
+          <label className="flex items-start gap-3">
             <input
               type="checkbox"
               className="checkbox checkbox-primary mt-1"
-              checked={agreed}
-              onChange={(e) => setAgreed(e.target.checked)}
               required
             />
             <span className="text-sm leading-snug">
@@ -144,11 +146,7 @@ export default function Kontakt() {
             </span>
           </label>
 
-          <button
-            type="submit"
-            className="btn btn-primary w-full sm:w-auto"
-            disabled={!agreed}
-          >
+          <button type="submit" className="btn btn-primary w-full sm:w-auto">
             Absenden
           </button>
         </form>
