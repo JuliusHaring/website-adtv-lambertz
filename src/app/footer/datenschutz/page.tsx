@@ -1,6 +1,25 @@
 import Headline from "@/lib/components/atoms/Headline";
 import PageSection from "@/lib/components/molecules/PageSection";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Datenschutz – ADTV Tanzschule Lambertz",
+  description:
+    "Erfahren Sie, wie die ADTV Tanzschule Lambertz mit personenbezogenen Daten umgeht – gemäß DSGVO, sicher und transparent.",
+  alternates: {
+    canonical: "https://www.tanzschule-lambertz.de/footer/datenschutz",
+  },
+  openGraph: {
+    title: "Datenschutz – ADTV Tanzschule Lambertz",
+    description:
+      "Transparente Informationen zum Umgang mit Ihren personenbezogenen Daten auf der Website der ADTV Tanzschule Lambertz.",
+    url: "https://www.tanzschule-lambertz.de/footer/datenschutz",
+    siteName: "ADTV Tanzschule Lambertz",
+    type: "website",
+    locale: "de_DE",
+  },
+};
 
 export default function Datenschutz() {
   const variant = "neutral";

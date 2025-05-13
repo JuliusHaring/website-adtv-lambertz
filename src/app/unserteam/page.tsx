@@ -1,6 +1,25 @@
 import Link from "next/link";
 import PageSection from "@/lib/components/molecules/PageSection";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Unser Team – ADTV Tanzschule Lambertz",
+  description:
+    "Lernen Sie das Team der ADTV Tanzschule Lambertz kennen: Unsere Tanzlehrerinnen und Mitarbeiterinnen stellen sich vor.",
+  alternates: {
+    canonical: "https://www.tanzschule-lambertz.de/unser-team",
+  },
+  openGraph: {
+    title: "Unser Team – ADTV Tanzschule Lambertz",
+    description:
+      "Einblicke in das engagierte Team der Tanzschule Lambertz: Lernen Sie unsere Tanzlehrerinnen und Assistentinnen kennen.",
+    url: "https://www.tanzschule-lambertz.de/unser-team",
+    siteName: "ADTV Tanzschule Lambertz",
+    type: "website",
+    locale: "de_DE",
+  },
+};
 
 export default function UnserTeam() {
   const variant = "accent";

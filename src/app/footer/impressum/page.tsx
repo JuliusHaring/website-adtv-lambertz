@@ -1,5 +1,24 @@
 import PageSection from "@/lib/components/molecules/PageSection";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Impressum – ADTV Tanzschule Lambertz",
+  description:
+    "Angaben gemäß § 5 TMG zur ADTV Tanzschule Lambertz in Aachen. Inhaberin: Astrid Lambertz, Mitglied im ADTV.",
+  alternates: {
+    canonical: "https://www.tanzschule-lambertz.de/footer/impressum",
+  },
+  openGraph: {
+    title: "Impressum – ADTV Tanzschule Lambertz",
+    description:
+      "Offizielle Anbieterkennzeichnung der ADTV Tanzschule Lambertz in Aachen gemäß § 5 TMG.",
+    url: "https://www.tanzschule-lambertz.de/footer/impressum",
+    siteName: "ADTV Tanzschule Lambertz",
+    type: "website",
+    locale: "de_DE",
+  },
+};
 
 export default function Impressum() {
   const variant = "neutral";

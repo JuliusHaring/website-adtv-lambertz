@@ -1,15 +1,31 @@
-"use client";
-
 import Headline from "@/lib/components/atoms/Headline";
+import PrintButton from "@/lib/components/atoms/PrintButton";
 import PageSection from "@/lib/components/molecules/PageSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AGB – ADTV Tanzschule Lambertz",
+  description:
+    "Hier finden Sie die Allgemeinen Geschäftsbedingungen der ADTV Tanzschule Lambertz zu Kursgebühren, Kündigungen und Unterrichtsbedingungen.",
+  alternates: {
+    canonical: "https://www.tanzschule-lambertz.de/footer/agb",
+  },
+  openGraph: {
+    title: "AGB – ADTV Tanzschule Lambertz",
+    description:
+      "Kursbedingungen, Kündigungsfristen und Zahlungsmodalitäten der ADTV Tanzschule Lambertz im Überblick.",
+    url: "https://www.tanzschule-lambertz.de/footer/agb",
+    siteName: "ADTV Tanzschule Lambertz",
+    type: "website",
+    locale: "de_DE",
+  },
+};
 
 export default function AGB() {
   return (
     <PageSection title="Allgemeine Geschäftsbedingungen" variant="secondary">
       <div className="no-print">
-        <button onClick={() => window.print()} className="btn btn-secondary">
-          Als PDF speichern
-        </button>
+        <PrintButton />
       </div>
 
       <p>

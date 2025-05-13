@@ -1,6 +1,23 @@
-"use client";
-
 import PageSection from "@/lib/components/molecules/PageSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Philosophie – ADTV Tanzschule Lambertz",
+  description:
+    "Unsere Philosophie: Tanzen als nonverbale Sprache voller Vertrauen, Freude und Rücksichtnahme. Erfahren Sie, was unsere Kurse besonders macht.",
+  alternates: {
+    canonical: "https://www.tanzschule-lambertz.de/philosophie",
+  },
+  openGraph: {
+    title: "Philosophie – ADTV Tanzschule Lambertz",
+    description:
+      "Tanzen ist mehr als Bewegung: Unsere Philosophie basiert auf Vertrauen, Freude und gegenseitiger Rücksichtnahme.",
+    url: "https://www.tanzschule-lambertz.de/philosophie",
+    siteName: "ADTV Tanzschule Lambertz",
+    type: "website",
+    locale: "de_DE",
+  },
+};
 
 export default function Philosophie() {
   return (

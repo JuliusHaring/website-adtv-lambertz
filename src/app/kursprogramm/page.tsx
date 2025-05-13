@@ -2,6 +2,24 @@ import Headline from "@/lib/components/atoms/Headline";
 import PageSection from "@/lib/components/molecules/PageSection";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Kursprogramm – ADTV Tanzschule Lambertz",
+  description:
+    "Unser Kursprogramm für Einsteiger – mit Walzer, Discofox, Salsa und mehr. Flexible Laufzeiten, faire Preise, Einstieg jederzeit möglich.",
+  alternates: {
+    canonical: "https://www.tanzschule-lambertz.de/kursprogramm",
+  },
+  openGraph: {
+    title: "Kursprogramm – ADTV Tanzschule Lambertz",
+    description:
+      "Entdecken Sie unser Einsteiger-Kursprogramm: Walzer, Discofox, Salsa & mehr. Flexible Laufzeit und transparente Konditionen.",
+    url: "https://www.tanzschule-lambertz.de/kursprogramm",
+    siteName: "ADTV Tanzschule Lambertz",
+    type: "website",
+    locale: "de_DE",
+  },
+};
+
 export default function Kursprogramm() {
   const variant = "secondary";
 

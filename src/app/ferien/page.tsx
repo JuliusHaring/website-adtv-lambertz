@@ -1,11 +1,28 @@
-"use client";
-
 import { useMemo } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Headline from "@/lib/components/atoms/Headline";
 import PageSection from "@/lib/components/molecules/PageSection";
 import "./calendar.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ferienkalender – ADTV Tanzschule Lambertz",
+  description:
+    "Alle Schließzeiten der ADTV Tanzschule Lambertz auf einen Blick. Feiertage und Ferienzeiten bequem im Kalender einsehen.",
+  alternates: {
+    canonical: "https://www.tanzschule-lambertz.de/ferien",
+  },
+  openGraph: {
+    title: "Ferienkalender – ADTV Tanzschule Lambertz",
+    description:
+      "Alle Schließzeiten der Tanzschule übersichtlich im Kalenderformat – inklusive Ferien, Feiertagen und Sonderterminen.",
+    url: "https://www.tanzschule-lambertz.de/ferien",
+    siteName: "ADTV Tanzschule Lambertz",
+    type: "website",
+    locale: "de_DE",
+  },
+};
 
 export default function Ferien() {
   const variant = "warning";

@@ -1,7 +1,24 @@
-"use client";
-
 import PageSection from "@/lib/components/molecules/PageSection";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Kontakt – ADTV Tanzschule Lambertz",
+  description:
+    "So erreichen Sie die ADTV Tanzschule Lambertz in Aachen – Kontaktformular, Telefonnummern und Adresse auf einen Blick.",
+  alternates: {
+    canonical: "https://www.tanzschule-lambertz.de/kontakt",
+  },
+  openGraph: {
+    title: "Kontakt – ADTV Tanzschule Lambertz",
+    description:
+      "Nehmen Sie Kontakt auf mit der ADTV Tanzschule Lambertz in Aachen. Nutzen Sie unser Kontaktformular oder rufen Sie uns direkt an.",
+    url: "https://www.tanzschule-lambertz.de/kontakt",
+    siteName: "ADTV Tanzschule Lambertz",
+    type: "website",
+    locale: "de_DE",
+  },
+};
 
 export default function Kontakt() {
   const variant = "primary";

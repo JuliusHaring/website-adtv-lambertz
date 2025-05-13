@@ -3,6 +3,24 @@ import PageSection from "@/lib/components/molecules/PageSection";
 import { Image } from "@/lib/components/atoms/Image";
 import MapEmbed from "@/lib/components/molecules/MapEmbed";
 
+export const metadata = {
+  title: "Unsere Tanzschule – ADTV Tanzschule Lambertz",
+  description:
+    "Besuchen Sie unsere Tanzschule in Aachen-Soers. Lernen Sie uns und unsere Räumlichkeiten kennen und erfahren Sie, wie Sie uns am besten erreichen.",
+  alternates: {
+    canonical: "https://www.tanzschule-lambertz.de/tanzschule",
+  },
+  openGraph: {
+    title: "Unsere Tanzschule – ADTV Tanzschule Lambertz",
+    description:
+      "Einblicke in die Räumlichkeiten und Lage der ADTV Tanzschule Lambertz in Aachen. Mit Wegbeschreibung und Fotogalerie.",
+    url: "https://www.tanzschule-lambertz.de/tanzschule",
+    siteName: "ADTV Tanzschule Lambertz",
+    type: "website",
+    locale: "de_DE",
+  },
+};
+
 export default function Tanzschule() {
   const variant = "info";
 
