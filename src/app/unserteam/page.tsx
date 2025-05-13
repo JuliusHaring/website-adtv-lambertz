@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Headline from "@/lib/components/atoms/Headline";
+import Image from "next/image";
 
 export default function UnserTeam() {
   const variant = "accent";
@@ -16,8 +17,9 @@ export default function UnserTeam() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Astrid Lambertz */}
           <div className="card bg-base-100 shadow-md overflow-hidden">
-            <figure className="h-64 bg-neutral">
-              <img
+            <figure className="h-64 relative bg-neutral">
+              <Image
+                fill
                 src="/unser_team/astrid.jpg"
                 alt="Astrid Lambertz"
                 className="h-full w-full object-cover"
@@ -36,8 +38,9 @@ export default function UnserTeam() {
 
           {/* Elvira Schäfer */}
           <div className="card bg-base-100 shadow-md overflow-hidden">
-            <figure className="h-64 bg-neutral">
-              <img
+            <figure className="h-64 relative bg-neutral">
+              <Image
+                fill
                 src="/unser_team/elvira.jpg"
                 alt="Elvira Schäfer"
                 className="h-full w-full object-cover"
@@ -55,8 +58,9 @@ export default function UnserTeam() {
 
           {/* Daniela Loenißen */}
           <div className="card bg-base-100 shadow-md overflow-hidden">
-            <figure className="h-64 bg-neutral">
-              <img
+            <figure className="h-64 relative bg-neutral">
+              <Image
+                fill
                 src="/unser_team/daniela.jpg"
                 alt="Daniela Loenißen"
                 className="h-full w-full object-cover"

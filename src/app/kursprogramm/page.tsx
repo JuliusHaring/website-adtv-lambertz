@@ -1,7 +1,14 @@
 import Headline from "@/lib/components/atoms/Headline";
+import Link from "next/link";
 
 export default function Kursprogramm() {
   const pageVariant = "secondary";
+
+  const kurse = [
+    { wochentag: "Donnerstag", uhrzeit: "19:30 Uhr", beginn: "ab 09.01.25" },
+    { wochentag: "Sonntag", uhrzeit: "15:30 Uhr", beginn: "ab 12.01.25" },
+  ];
+
   return (
     <section>
       <Headline level={2} variant={pageVariant}>
@@ -35,26 +42,18 @@ export default function Kursprogramm() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Donnerstag</td>
-              <td>19:30 Uhr</td>
-              <td>ab 09.01.25</td>
-              <td>
-                <a href="#anmeldung" className="btn btn-secondary btn-sm">
-                  Anmelden →
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>Sonntag</td>
-              <td>15:30 Uhr</td>
-              <td>ab 12.01.25</td>
-              <td>
-                <a href="#anmeldung" className="btn btn-secondary btn-sm">
-                  Anmelden →
-                </a>
-              </td>
-            </tr>
+            {kurse.map(({ wochentag, uhrzeit, beginn }) => (
+              <tr key={`${wochentag}-${uhrzeit}`}>
+                <td>{wochentag}</td>
+                <td>{uhrzeit}</td>
+                <td>{beginn}</td>
+                <td>
+                  <Link href="/kontakt" className="btn btn-secondary btn-sm">
+                    Anmelden →
+                  </Link>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
