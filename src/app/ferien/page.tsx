@@ -54,13 +54,15 @@ export default function Ferien() {
         Die unten hervorgehobenen Tage sind Schließzeiten der Tanzschule.
       </p>
 
-      <div className="bg-base-100 rounded-lg shadow p-4 fill my-10">
-        <Calendar
-          tileClassName={({ date }) =>
-            isClosed(date) ? "holiday-tile" : undefined
-          }
-          selectRange={false}
-        />
+      <div className="my-10 flex justify-center">
+        <div className="bg-base-100 rounded-lg shadow p-4 w-full lg:max-w-1/2">
+          <Calendar
+            tileClassName={({ date }) =>
+              isClosed(date) ? "holiday-tile" : undefined
+            }
+            selectRange={false}
+          />
+        </div>
       </div>
 
       <p className="text-sm text-gray-500 italic">

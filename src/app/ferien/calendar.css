@@ -9,8 +9,6 @@
 }
 
 .holiday-tile {
-  background-color: oklch(
-    65% 0.241 354.308
-  ); /* uses DaisyUI --wa for warning */
+  background-color: red; /* uses DaisyUI --wa for warning */
   color: white;
 }
