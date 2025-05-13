@@ -14,9 +14,11 @@ export default function FerienKalender() {
 
   return (
     <Calendar
+      locale="de-DE"
       tileClassName={({ date }) =>
         isClosed(date) ? "holiday-tile" : undefined
       }
+      formatDay={(_, date) => date.getDate().toString()}
       selectRange={false}
     />
   );
