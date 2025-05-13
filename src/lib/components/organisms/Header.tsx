@@ -1,6 +1,17 @@
 "use client";
-import Link from "next/link";
+
 import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+
+const NAV_ITEMS = [
+  { title: "Philosophie", href: "/philosophie", className: "btn-primary" },
+  { title: "Kursprogramm", href: "/kursprogramm", className: "btn-secondary" },
+  { title: "Unser Team", href: "/unserteam", className: "btn-accent" },
+  { title: "Tanzschule", href: "/tanzschule", className: "btn-info" },
+  { title: "Ferien", href: "/ferien", className: "btn-warning" },
+  { title: "Kontakt", href: "/kontakt", className: "btn-primary" },
+];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -16,58 +27,56 @@ export default function Header() {
         </Link>
       </div>
 
+      {/* Mobile toggle */}
       <div className="flex-none lg:hidden">
         <button
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen(true)}
           className="btn btn-square btn-ghost"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            {open ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
+          <Menu className="h-6 w-6" />
         </button>
       </div>
 
+      {/* Desktop nav */}
+      <div className="hidden lg:flex gap-2 items-center">
+        {NAV_ITEMS.map(({ title, href, className }) => (
+          <Link key={href} href={href} className={`btn btn-ghost ${className}`}>
+            {title}
+          </Link>
+        ))}
+      </div>
+
+      {/* Mobile sidenav */}
       <div
-        className={`flex-col lg:flex-row lg:flex gap-2 items-center ${open ? "flex absolute top-16 right-4 bg-base-100 shadow-md p-4 rounded-lg z-50" : "hidden"} lg:static lg:bg-transparent lg:shadow-none`}
+        className={`fixed inset-0 bg-base-100 z-40 transition-transform duration-300 ease-in-out ${
+          open ? "translate-x-0" : "-translate-x-full"
+        } lg:hidden`}
       >
-        <Link className="btn btn-ghost btn-primary" href="/philosophie">
-          Philosophie
-        </Link>
-        <Link className="btn btn-ghost btn-secondary" href="/kursprogramm">
-          Kursprogramm
-        </Link>
-        <Link className="btn btn-ghost btn-accent" href="/unserteam">
-          Unser Team
-        </Link>
-        <Link className="btn btn-ghost btn-info" href="/tanzschule">
-          Tanzschule
-        </Link>
-        <Link className="btn btn-ghost btn-warning" href="/ferien">
-          Ferien
-        </Link>
-        <Link className="btn btn-ghost btn-primary" href="/kontakt">
-          Kontakt
-        </Link>
+        <div className="flex justify-between items-center px-6 py-4 shadow-md">
+          <Link
+            href="/"
+            onClick={() => setOpen(false)}
+            className="text-xl font-bold text-primary"
+          >
+            ADTV Tanzschule Lambertz
+          </Link>
+          <button onClick={() => setOpen(false)}>
+            <X className="h-6 w-6" />
+          </button>
+        </div>
+
+        <nav className="flex flex-col px-6 py-6 space-y-4">
+          {NAV_ITEMS.map(({ title, href, className }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              className={`btn btn-ghost ${className}`}
+            >
+              {title}
+            </Link>
+          ))}
+        </nav>
       </div>
     </div>
   );
