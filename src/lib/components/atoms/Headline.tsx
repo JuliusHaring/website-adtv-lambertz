@@ -4,6 +4,7 @@ import { DaisyVariants } from "@/lib/types";
 type HeadlineProps = {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
   variant?: DaisyVariants;
+  className?: string;
   children: React.ReactNode;
 };
 
@@ -21,6 +22,7 @@ export const variantClasses: Record<DaisyVariants, string> = {
 export default function Headline({
   level = 1,
   variant = "primary",
+  className,
   children,
 }: HeadlineProps) {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
@@ -38,7 +40,9 @@ export default function Headline({
   const variantClass = variantClasses[variant] ?? "text-primary";
 
   return (
-    <Tag className={`${sizeClass} font-bold ${variantClass} my-6`}>
+    <Tag
+      className={`${sizeClass} font-bold ${variantClass} my-6 ${className && className}`}
+    >
       {children}
     </Tag>
   );
