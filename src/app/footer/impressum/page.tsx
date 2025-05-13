@@ -101,7 +101,7 @@ export default function Impressum() {
       <div>
         <p className="font-semibold">Design & Realisation:</p>
         <p>
-          Julius Haring - Data Analytics
+          Webseite: Julius Haring - Data Analytics
           <br />
           Web- und AI-Entwickler
         </p>
@@ -112,6 +112,17 @@ export default function Impressum() {
             className="link link-neutral"
           >
             info@juliusharing.com
+          </Link>
+        </p>
+        <p className="mt-4">
+          Logo: Annett Klabis
+          <br />
+          Grafik- & Mediendesignerin
+        </p>
+        <p>
+          E-Mail:{" "}
+          <Link href="mailto:a.klabis@web.de" className="link link-neutral">
+            a.klabis@web.de
           </Link>
         </p>
       </div>

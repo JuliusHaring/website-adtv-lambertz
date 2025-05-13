@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { Image } from "@/lib/components/atoms/Image";
 
 const NAV_ITEMS = [
   { title: "Philosophie", href: "/philosophie", className: "btn-primary" },
@@ -21,7 +22,16 @@ export default function Header() {
     <div className="navbar bg-base-100 shadow-md px-4 no-print">
       <div className="flex-1">
         <Link href="/" className={titleClass}>
-          ADTV Tanzschule Lambertz
+          <span className="flex items-center gap-2">
+            <Image
+              clickToOpen={false}
+              alt="Logo"
+              width={40}
+              height={40}
+              src="/logo.png"
+            />
+            ADTV Tanzschule Lambertz
+          </span>
         </Link>
       </div>
 
