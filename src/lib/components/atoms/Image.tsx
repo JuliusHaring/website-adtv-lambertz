@@ -25,6 +25,9 @@ export function Image({ className, clickToOpen = true, ...props }: Props) {
   const clickableClass = clickToOpen ? " cursor-zoom-in" : "";
   const finalClass = `${baseClass}${clickableClass} ${className ?? ""}`.trim();
 
+  const openProps = { ...props };
+  delete openProps.fill;
+
   return (
     <>
       <NextImage
@@ -40,7 +43,9 @@ export function Image({ className, clickToOpen = true, ...props }: Props) {
         >
           <div className="max-w-4xl w-full px-4">
             <NextImage
-              {...props}
+              {...openProps}
+              width={800}
+              height={800}
               className="w-full h-auto rounded-xl cursor-zoom-out"
               onClick={() => setIsOpen(false)}
             />

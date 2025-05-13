@@ -1,5 +1,5 @@
 import Headline from "@/lib/components/atoms/Headline";
-import Image from "next/image";
+import { Image } from "@/lib/components/atoms/Image";
 
 export default function Tanzschule() {
   const variant = "info";
@@ -48,17 +48,14 @@ export default function Tanzschule() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {[1, 2, 3, 4, 5, 6, 7].map((i) => (
-            <div
+            <Image
               key={i}
-              className="relative aspect-square rounded overflow-hidden"
-            >
-              <Image
-                src={`/tanzschule/ts_0${i}.jpg`}
-                alt={`Foto ${i}`}
-                fill
-                className="object-cover"
-              />
-            </div>
+              src={`/tanzschule/ts_0${i}.jpg`}
+              alt={`Foto ${i}`}
+              width={800}
+              height={800}
+              className="object-cover aspect-square"
+            />
           ))}
         </div>
       </div>
