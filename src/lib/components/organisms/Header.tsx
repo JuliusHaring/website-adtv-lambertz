@@ -15,14 +15,13 @@ const NAV_ITEMS = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const titleClass =
+    "lg:text-3xl text-2xl  font-bold bg-gradient-to-br from-primary via-secondary via-accent via-info to-warning bg-clip-text text-transparent";
 
   return (
     <div className="navbar bg-base-100 shadow-md px-4 no-print">
       <div className="flex-1">
-        <Link
-          href="/"
-          className="lg:text-3xl text-2xl font-bold bg-gradient-to-br from-primary via-secondary via-accent via-info to-warning bg-clip-text text-transparent"
-        >
+        <Link href="/" className={titleClass}>
           ADTV Tanzschule Lambertz
         </Link>
       </div>
@@ -53,11 +52,7 @@ export default function Header() {
         } lg:hidden`}
       >
         <div className="flex justify-between items-center px-6 py-4 shadow-md">
-          <Link
-            href="/"
-            onClick={() => setOpen(false)}
-            className="text-xl font-bold text-primary"
-          >
+          <Link href="/" onClick={() => setOpen(false)} className={titleClass}>
             ADTV Tanzschule Lambertz
           </Link>
           <button onClick={() => setOpen(false)}>
@@ -71,7 +66,7 @@ export default function Header() {
               key={href}
               href={href}
               onClick={() => setOpen(false)}
-              className={`btn btn-ghost ${className}`}
+              className={`btn btn-ghost ${className} text-xl`}
             >
               {title}
             </Link>
