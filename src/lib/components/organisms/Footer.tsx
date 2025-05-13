@@ -42,6 +42,9 @@ export default function Footer() {
           <a className="link link-hover" href="/footer/datenschutz">
             Datenschutz
           </a>
+          <a className="link link-hover" href="/footer/agb">
+            AGB
+          </a>
         </div>
       </div>
 

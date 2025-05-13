@@ -24,11 +24,10 @@ export default function Kursprogramm() {
       <p>
         Sie bestimmen die Länge des Kurses. Durch die monatliche Zahlweise in
         Kombination mit unseren kurzen Kündigungsfristen (zu den{" "}
-        <a className="link link-secondary" href="#agb">
-          Allgemeinen Geschäftsbedingungen der ADTV Tanzschule Lambertz
-        </a>{" "}
-        - AachenAGB) entscheiden Sie selber, ob Ihr Kurs 4 Wochen oder 3 Monate
-        dauert.
+        <a className="link link-secondary" href="/footer/agb">
+          AGB
+        </a>
+        ) entscheiden Sie selber, ob Ihr Kurs 4 Wochen oder 3 Monate dauert.
       </p>
 
       <div className="overflow-x-auto">
