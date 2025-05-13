@@ -15,8 +15,7 @@ const NAV_ITEMS = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const titleClass =
-    "lg:text-3xl text-2xl  font-bold bg-gradient-to-br from-primary via-secondary via-accent via-info to-warning bg-clip-text text-transparent";
+  const titleClass = "lg:text-3xl text-2xl  font-bold text-primary";
 
   return (
     <div className="navbar bg-base-100 shadow-md px-4 no-print">
