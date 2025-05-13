@@ -1,8 +1,9 @@
 import Headline from "@/lib/components/atoms/Headline";
+import PageSection from "@/lib/components/molecules/PageSection";
 import Link from "next/link";
 
 export default function Kursprogramm() {
-  const pageVariant = "secondary";
+  const variant = "secondary";
 
   const kurse = [
     { wochentag: "Donnerstag", uhrzeit: "19:30 Uhr", beginn: "ab 09.01.25" },
@@ -10,11 +11,7 @@ export default function Kursprogramm() {
   ];
 
   return (
-    <section className="text-base-content px-4 w-full max-w-3xl mx-auto space-y-6">
-      <Headline level={2} variant={pageVariant}>
-        Einsteiger
-      </Headline>
-
+    <PageSection title="Einsteiger" variant={variant}>
       <p>
         Mit viel Musik und guter Laune lernen Sie, gemäß unserer Philosophie,
         die folgende Tänze kennen: Wiener Walzer, Langsamer Walzer, Discofox,
@@ -34,11 +31,9 @@ export default function Kursprogramm() {
         {kurse.map(({ wochentag, uhrzeit, beginn }) => (
           <div
             key={`${wochentag}-${uhrzeit}`}
-            className="bg-base-100 border border-base-200 rounded-xl p-4 shadow-md space-y-2"
+            className="bg-base-100 border border-base-200 rounded-xl p-4 shadow-md"
           >
-            <p className="text-lg font-semibold text-base-content">
-              {wochentag}
-            </p>
+            <p className="text-lg font-semibold">{wochentag}</p>
             <p>
               <span className="font-medium">Uhrzeit:</span> {uhrzeit}
             </p>
@@ -52,11 +47,11 @@ export default function Kursprogramm() {
         ))}
       </div>
 
-      <Headline level={3} variant={pageVariant}>
+      <Headline level={3} variant={variant}>
         Konditionen
       </Headline>
 
-      <ul className="list-disc list-inside space-y-2">
+      <ul>
         <li>Kosten: 33,- € pro Person und Monat</li>
         <li>
           Studententarif: 25,- € pro Person und Monat (mit Studierendenausweis)
@@ -70,6 +65,6 @@ export default function Kursprogramm() {
         <li>Kostenlose Schnupperstunde nach Absprache möglich</li>
         <li>Kündigung 4 Wochen zum Monatsende möglich</li>
       </ul>
-    </section>
+    </PageSection>
   );
 }

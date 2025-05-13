@@ -1,15 +1,12 @@
 import Headline from "@/lib/components/atoms/Headline";
+import PageSection from "@/lib/components/molecules/PageSection";
 import Link from "next/link";
 
 export default function Datenschutz() {
   const variant = "neutral";
 
   return (
-    <section>
-      <Headline level={2} variant={variant}>
-        Datenschutz
-      </Headline>
-
+    <PageSection title="Datenschutz" variant={variant}>
       <p className="font-semibold">
         Information über die Erhebung personenbezogener Daten und Kontaktdaten
         des Verantwortlichen
@@ -56,7 +53,7 @@ export default function Datenschutz() {
         Beim rein informatorischen Besuch unserer Website erheben wir nur
         serverseitige Logdaten:
       </p>
-      <ul className="list-disc list-inside space-y-1">
+      <ul>
         <li>Unsere besuchte Website</li>
         <li>Datum und Uhrzeit des Zugriffs</li>
         <li>Menge der gesendeten Daten in Byte</li>
@@ -107,7 +104,7 @@ export default function Datenschutz() {
       <Headline level={3} variant={variant}>
         Ihre Rechte
       </Headline>
-      <ul className="list-disc list-inside space-y-1">
+      <ul>
         <li>Auskunft (Art. 15 DSGVO)</li>
         <li>Berichtigung (Art. 16 DSGVO)</li>
         <li>Löschung (Art. 17 DSGVO)</li>
@@ -134,6 +131,6 @@ export default function Datenschutz() {
         Die Speicherdauer richtet sich nach gesetzlichen Fristen. Nach Ablauf
         erfolgt Löschung, sofern keine weitere Nutzung gerechtfertigt ist.
       </p>
-    </section>
+    </PageSection>
   );
 }

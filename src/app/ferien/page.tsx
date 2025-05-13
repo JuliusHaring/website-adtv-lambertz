@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Headline from "@/lib/components/atoms/Headline";
+import PageSection from "@/lib/components/molecules/PageSection";
 import "./calendar.css";
 
 export default function Ferien() {
@@ -36,13 +37,12 @@ export default function Ferien() {
     [],
   );
 
-  const isClosed = (date: Date) => {
-    return closedDates.some(({ from, to }) => {
+  const isClosed = (date: Date) =>
+    closedDates.some(({ from, to }) => {
       const start = new Date(from);
       const end = new Date(to);
       return date >= start && date <= end;
     });
-  };
 
   const formatDate = (iso: string) =>
     new Date(iso).toLocaleDateString("de-DE", {
@@ -52,17 +52,11 @@ export default function Ferien() {
     });
 
   return (
-    <section>
-      <Headline level={2} variant={variant}>
-        Ferienkalender
-      </Headline>
+    <PageSection title="Ferienkalender" variant={variant}>
+      <p>Die unten hervorgehobenen Tage sind Schließzeiten der Tanzschule.</p>
 
-      <p className="text-base">
-        Die unten hervorgehobenen Tage sind Schließzeiten der Tanzschule.
-      </p>
-
-      <div className="my-10 flex justify-center">
-        <div className="bg-base-100 rounded-lg shadow p-4 w-full md:w-auto">
+      <div className="flex justify-center">
+        <div>
           <Calendar
             tileClassName={({ date }) =>
               isClosed(date) ? "holiday-tile" : undefined
@@ -72,15 +66,15 @@ export default function Ferien() {
         </div>
       </div>
 
-      <p className="text-sm text-gray-500 italic text-center">
+      <p className="text-sm italic text-center">
         An allen markierten Tagen findet kein Unterricht statt.
       </p>
 
-      <div className="mt-10 space-y-3">
+      <div>
         <Headline level={3} variant={variant}>
           Übersicht der Schließzeiten
         </Headline>
-        <ul className="list-disc list-inside space-y-1 text-base-content/80">
+        <ul>
           {closedDates.map(({ from, to, label }, i) => (
             <li key={i}>
               {formatDate(from)}
@@ -90,6 +84,6 @@ export default function Ferien() {
           ))}
         </ul>
       </div>
-    </section>
+    </PageSection>
   );
 }

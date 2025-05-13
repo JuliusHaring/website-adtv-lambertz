@@ -1,6 +1,6 @@
 "use client";
 
-import Headline from "@/lib/components/atoms/Headline";
+import PageSection from "@/lib/components/molecules/PageSection";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -9,11 +9,7 @@ export default function Kontakt() {
   const [agreed, setAgreed] = useState(false);
 
   return (
-    <section className="space-y-6">
-      <Headline level={2} variant={variant}>
-        Kontakt
-      </Headline>
-
+    <PageSection title="Kontakt" variant={variant}>
       <p>
         Sie haben Fragen, einen speziellen Wunsch oder benötigen weiteres
         Informationsmaterial? Schreiben Sie uns – wir freuen uns darauf!
@@ -29,7 +25,7 @@ export default function Kontakt() {
         </Link>
       </p>
 
-      <div className="space-y-1 text-sm text-base-content">
+      <div className="text-sm">
         <p>ADTV Tanzschule Lambertz</p>
         <p>Soerser Weg 90</p>
         <p>52070 Aachen</p>
@@ -37,8 +33,8 @@ export default function Kontakt() {
         <p>Mobil: 0163 1976380</p>
       </div>
 
-      <div className="bg-base-100 shadow-md rounded-xl p-6 space-y-6">
-        <form className="space-y-6" noValidate>
+      <div className="bg-base-100 shadow-md rounded-xl">
+        <form className="p-6" noValidate>
           <fieldset className="flex gap-6">
             <legend className="text-sm font-medium">Anrede:</legend>
             <label className="label gap-2 cursor-pointer">
@@ -61,7 +57,7 @@ export default function Kontakt() {
             </label>
           </fieldset>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 my-6">
             <input
               type="text"
               name="name"
@@ -109,10 +105,10 @@ export default function Kontakt() {
             name="nachricht"
             placeholder="Ihre Nachricht*"
             required
-            className="textarea textarea-bordered w-full min-h-[8rem]"
+            className="textarea textarea-bordered w-full min-h-[8rem] mb-6"
           />
 
-          <label className="flex items-start gap-3">
+          <label className="flex items-start gap-3 mb-6">
             <input
               type="checkbox"
               className="checkbox checkbox-primary mt-1"
@@ -139,6 +135,6 @@ export default function Kontakt() {
           </button>
         </form>
       </div>
-    </section>
+    </PageSection>
   );
 }

@@ -1,15 +1,11 @@
-import Headline from "@/lib/components/atoms/Headline";
+import PageSection from "@/lib/components/molecules/PageSection";
 import Link from "next/link";
 
 export default function Impressum() {
   const variant = "neutral";
 
   return (
-    <section>
-      <Headline level={2} variant={variant}>
-        Impressum
-      </Headline>
-
+    <PageSection title="Impressum" variant={variant}>
       <p>
         zur Homepage des{" "}
         <Link
@@ -21,7 +17,7 @@ export default function Impressum() {
         </Link>
       </p>
 
-      <div className="space-y-1">
+      <div>
         <p>ADTV Tanzschule Lambertz</p>
         <p>Astrid Lambertz</p>
         <p>Soerser Weg 90</p>
@@ -29,7 +25,7 @@ export default function Impressum() {
         <p>Telefon: 0241 4465225</p>
         <p>Mobil: 0163 1976380</p>
         <p>
-          E-Mail:
+          E-Mail:{" "}
           <Link
             href="mailto:info@tanzschule-lambertz.de"
             className="link link-neutral"
@@ -50,13 +46,13 @@ export default function Impressum() {
         </Link>
       </p>
 
-      <div className="space-y-1">
+      <div>
         <p className="font-semibold">Bankverbindung:</p>
         <p>IBAN: DE09 3906 0180 1423 3250 26</p>
         <p>BIC: GENODED1AAC (Aachener Bank)</p>
       </div>
 
-      <div className="space-y-2">
+      <div>
         <p className="font-semibold">Haftungsausschluss:</p>
         <p>
           Alle Inhalte auf unserer Internetseite wurden mit größter Sorgfalt
@@ -73,7 +69,7 @@ export default function Impressum() {
         </p>
       </div>
 
-      <div className="space-y-2">
+      <div>
         <p className="font-semibold">Aphorismus:</p>
         <p>
           Die Verwendung des Sinnspruchs im Kopfbereich dieser Internetseite
@@ -83,7 +79,7 @@ export default function Impressum() {
         </p>
       </div>
 
-      <div className="space-y-1">
+      <div>
         <p className="font-semibold">Design & Realisation:</p>
         <p>
           Julius Haring - Data Analytics
@@ -91,15 +87,15 @@ export default function Impressum() {
           Web- und AI-Entwickler
         </p>
         <p>
-          E-Mail:
+          E-Mail:{" "}
           <Link
             href="mailto:info@juliusharing.com"
             className="link link-neutral"
           >
-            mailto:info@juliusharing.com
+            info@juliusharing.com
           </Link>
         </p>
       </div>
-    </section>
+    </PageSection>
   );
 }

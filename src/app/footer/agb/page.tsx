@@ -1,19 +1,16 @@
 "use client";
 
 import Headline from "@/lib/components/atoms/Headline";
+import PageSection from "@/lib/components/molecules/PageSection";
 
 export default function AGB() {
   return (
-    <main className="prose max-w-3xl mx-auto px-4 py-8">
-      <div className="no-print mb-4">
+    <PageSection title="Allgemeine Geschäftsbedingungen" variant="secondary">
+      <div className="no-print">
         <button onClick={() => window.print()} className="btn btn-secondary">
           Als PDF speichern
         </button>
       </div>
-
-      <Headline level={2} variant="secondary">
-        Allgemeine Geschäftsbedingungen
-      </Headline>
 
       <p>
         Die Tanzschule Lambertz verpflichtet sich, bei rechtzeitiger und
@@ -80,6 +77,6 @@ export default function AGB() {
         Tanzpartner zu finden. Dies ist jedoch keine Verpflichtung. Bei
         Nichtgelingen ist der Kursteilnehmer von der Honorarpflicht entbunden.
       </p>
-    </main>
+    </PageSection>
   );
 }
