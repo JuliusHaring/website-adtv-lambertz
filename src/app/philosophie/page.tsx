@@ -1,5 +1,8 @@
 import PageSection from "@/lib/components/molecules/PageSection";
 import { Metadata } from "next";
+import { Image } from "@/lib/components/atoms/Image";
+import Headline from "@/lib/components/atoms/Headline";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Philosophie – ADTV Tanzschule Lambertz",
@@ -31,12 +34,35 @@ export default function Philosophie() {
         jeder sprechen sollte. Rücksichtnahme, Vertrauen und Freude stehen im
         Mittelpunkt jedes Tanzkurses.
       </p>
-      <p className="italic text-center">
-        „Dieses nonverbale Zwiegespräch wie selbstverständlich im Unterricht zu
-        vermitteln ist mein tägliches Bestreben.“
-        <br />
-        <span className="not-italic font-semibold">– Ihre Astrid Lambertz</span>
-      </p>
+      <div className="text-center mt-4">
+        <p className="italic">
+          „Dieses nonverbale Zwiegespräch wie selbstverständlich im Unterricht
+          zu vermitteln ist mein tägliches Bestreben.“
+          <br />
+          <span className="not-italic font-semibold">
+            – Ihre Astrid Lambertz
+          </span>
+        </p>
+        <Headline level={3}>
+          Ausgebildet beim ADTV – mit Leidenschaft und Professionalität.
+        </Headline>
+        <div className="mt-4 inline-block">
+          <Link
+            href={"https://adtv.de/"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              clickToOpen={false}
+              src="/philosophie/adtv.png"
+              alt="ADTV Logo"
+              width={200}
+              height={100}
+              className="mx-auto"
+            />
+          </Link>
+        </div>
+      </div>
     </PageSection>
   );
 }
