@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Headline from "@/lib/components/atoms/Headline";
-import "./calendar.css"; // custom style overrides
+import "./calendar.css";
 
 export default function Ferien() {
   const variant = "warning";
@@ -44,6 +44,13 @@ export default function Ferien() {
     });
   };
 
+  const formatDate = (iso: string) =>
+    new Date(iso).toLocaleDateString("de-DE", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+
   return (
     <section>
       <Headline level={2} variant={variant}>
@@ -55,7 +62,7 @@ export default function Ferien() {
       </p>
 
       <div className="my-10 flex justify-center">
-        <div className="bg-base-100 rounded-lg shadow p-4 w-full lg:max-w-1/2">
+        <div className="bg-base-100 rounded-lg shadow p-4 w-full md:w-auto">
           <Calendar
             tileClassName={({ date }) =>
               isClosed(date) ? "holiday-tile" : undefined
@@ -65,9 +72,24 @@ export default function Ferien() {
         </div>
       </div>
 
-      <p className="text-sm text-gray-500 italic">
+      <p className="text-sm text-gray-500 italic text-center">
         An allen markierten Tagen findet kein Unterricht statt.
       </p>
+
+      <div className="mt-10 space-y-3">
+        <Headline level={3} variant={variant}>
+          Übersicht der Schließzeiten
+        </Headline>
+        <ul className="list-disc list-inside space-y-1 text-base-content/80">
+          {closedDates.map(({ from, to, label }, i) => (
+            <li key={i}>
+              {formatDate(from)}
+              {from !== to && ` bis ${formatDate(to)}`}
+              {label && ` – ${label}`}
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
