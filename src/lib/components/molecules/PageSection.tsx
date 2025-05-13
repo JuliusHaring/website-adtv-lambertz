@@ -17,7 +17,7 @@ export default function PageSection({
 }: Props) {
   return (
     <section className="space-y-6">
-      <Headline level={2} variant={variant} className={titleClass}>
+      <Headline level={1} variant={variant} className={titleClass}>
         {title}
       </Headline>
       {children}
