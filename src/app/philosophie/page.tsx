@@ -5,7 +5,7 @@ import Headline from "@/lib/components/atoms/Headline";
 export default function Philosophie() {
   return (
     <section>
-      <div className="relative ax-w-3xl mx-auto px-6 py-20 text-center space-y-6">
+      <div className="relative ax-w-3xl mx-auto px-6 text-center space-y-6">
         <Headline level={1} variant="primary">
           Sprechen Sie Walzer?
         </Headline>

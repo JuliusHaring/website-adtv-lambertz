@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/lib/components/organisms/Header";
 import Footer from "@/lib/components/organisms/Footer";
 import ColorBar from "@/lib/components/molecules/Colorbar";
+import Card from "@/lib/components/molecules/Card";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,12 +34,30 @@ export default function RootLayout({
   return (
     <html lang="de" data-theme="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-        <div className="min-h-screen flex flex-col">
+        <div className="fixed inset-0 z-0 overflow-hidden">
+          <video
+            className="w-full h-full object-cover"
+            src="/chacha.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          <div className="absolute inset-0 bg-white/10 backdrop-blur-md" />
+        </div>
+
+        <div className="relative z-10 min-h-screen flex flex-col">
           <Header />
           <ColorBar />
-          <main className="flex-grow px-4 md:px-40 py-6">{children}</main>
+          <main className="flex-grow px-4 md:px-40 py-6">
+            <div className="min-h-[calc(100vh-theme(spacing.24))] flex items-center justify-center">
+              <Card hover={false} className="shadow-xl">
+                {children}
+              </Card>
+            </div>
+          </main>
           <Footer />
         </div>
       </body>
