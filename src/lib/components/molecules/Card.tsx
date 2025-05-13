@@ -13,7 +13,7 @@ export default function Card({
 }) {
   return (
     <div
-      className={`bg-base-100 border border-base-200 px-6 pb-6 rounded-lg space-y-3 ${
+      className={`bg-base-100 border border-base-200 px-12 pb-10 pt-4 rounded-lg space-y-3 ${
         hover
           ? "transition-transform duration-300 ease-in-out hover:scale-105"
           : ""

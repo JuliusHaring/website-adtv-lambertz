@@ -21,6 +21,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const useVideoBg: boolean = true;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tanzschule-lambertz.de"),
   title: "ADTV Tanzschule Lambertz – Tanzkurse in Aachen",
@@ -91,30 +93,31 @@ export default function RootLayout({
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-        <div className="fixed inset-0 z-0 overflow-hidden bg-white">
-          <video
-            className="w-full h-full object-cover"
-            src="/chacha.webm"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-          />
-          <div className="absolute inset-0 bg-white/5 backdrop-blur-md" />
-        </div>
-
+        {" "}
+        {useVideoBg && (
+          <div className="fixed inset-0 z-0 overflow-hidden bg-white">
+            <video
+              className="w-full h-full object-cover"
+              src="/chacha.webm"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            />
+            <div className="absolute inset-0 bg-white/5 backdrop-blur-md" />
+          </div>
+        )}
         <div className="relative z-10 min-h-screen flex flex-col">
           <Header />
           <ColorBar />
           <main className="flex-grow px-4 lg:px-40 py-6">
             <div className="min-h-[calc(100vh-theme(spacing.24))]flex items-center justify-center">
-              <Card hover={false} className="shadow-xl">
+              <Card hover={false} className="shadow-2xl">
                 {children}
               </Card>
             </div>
