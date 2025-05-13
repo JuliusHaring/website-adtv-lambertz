@@ -15,22 +15,40 @@ export default function Kontakt() {
         Informationsmaterial? Schreiben Sie uns – wir freuen uns darauf!
       </p>
 
-      <p>
-        Oder direkt per E-Mail:&nbsp;
-        <Link
-          href="mailto:info@tanzschule-lambertz.de"
-          className="link link-primary"
-        >
-          info@tanzschule-lambertz.de
-        </Link>
-      </p>
-
       <div className="text-sm">
-        <p>ADTV Tanzschule Lambertz</p>
-        <p>Soerser Weg 90</p>
-        <p>52070 Aachen</p>
-        <p>Telefon: 0241 4465225</p>
-        <p>Mobil: 0163 1976380</p>
+        <Link
+          href="https://maps.app.goo.gl/u5ojGbRLVU5ArwpX7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link link-hover block"
+        >
+          ADTV Tanzschule Lambertz
+          <br />
+          Soerser Weg 90
+          <br />
+          52070 Aachen
+        </Link>
+        <p>
+          Telefon:{" "}
+          <Link href="tel:02414465225" className="link link-hover">
+            0241 4465225
+          </Link>
+        </p>
+        <p>
+          Mobil:{" "}
+          <Link href="tel:01631976380" className="link link-hover">
+            0163 1976380
+          </Link>
+        </p>
+        <p>
+          E-Mail:{" "}
+          <Link
+            href={"mailto:info@tanzschule-lambertz.de"}
+            className="link link-hover"
+          >
+            info@tanzschule-lambertz.de
+          </Link>
+        </p>
       </div>
 
       <div className="bg-base-100 shadow-md rounded-xl">
