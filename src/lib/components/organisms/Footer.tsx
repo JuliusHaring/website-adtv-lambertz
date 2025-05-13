@@ -4,11 +4,16 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row justify-between gap-12 max-w-5xl mx-auto w-full">
         <div className="flex flex-col space-y-2">
           <span className="footer-title">Tanzschule</span>
-          <p>
+          <a
+            href="https://maps.app.goo.gl/u5ojGbRLVU5ArwpX7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link link-hover"
+          >
             ADTV Tanzschule Lambertz <br />
             Soerser Weg 90 <br />
             52070 Aachen
-          </p>
+          </a>
         </div>
 
         <div className="flex flex-col space-y-2">

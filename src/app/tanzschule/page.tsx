@@ -1,5 +1,6 @@
 import Headline from "@/lib/components/atoms/Headline";
 import { Image } from "@/lib/components/atoms/Image";
+import MapEmbed from "@/lib/components/molecules/MapEmbed";
 
 export default function Tanzschule() {
   const variant = "info";
@@ -11,27 +12,22 @@ export default function Tanzschule() {
       </Headline>
 
       <div className="text-base-content space-y-4">
-        <p className="font-semibold leading-relaxed">
+        <a
+          href="https://maps.app.goo.gl/u5ojGbRLVU5ArwpX7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold leading-relaxed hover:underline"
+        >
           ADTV Tanzschule Lambertz
           <br />
           Soerser Weg 90
           <br />
           52070 Aachen
-        </p>
+        </a>
 
-        <div className="w-full h-[20rem] md:h-[28rem] rounded-xl overflow-hidden shadow-md">
-          <iframe
-            title="Tanzschule Lambertz Karte"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2522.011691628047!2d6.0917201!3d50.7938919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0991250eeb539%3A0x2f83c16d2705a4fa!2sADTV%20dance%20school%20Lambertz!5e0!3m2!1sen!2sde!4v1746440384720!5m2!1sen!2sde"
-            width="100%"
-            height="100%"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full"
-          ></iframe>
+        <div className="my-6">
+          <MapEmbed src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2522.011691628047!2d6.0917201!3d50.7938919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0991250eeb539%3A0x2f83c16d2705a4fa!2sADTV%20dance%20school%20Lambertz!5e0!3m2!1sen!2sde!4v1746440384720!5m2!1sen!2sde" />
         </div>
-
         <p>
           Seit Januar 2010 befindet sich der Hauptstandort der ADTV Tanzschule
           Lambertz mitten in der grünen Aachener Soers. Die Tische rund um die
