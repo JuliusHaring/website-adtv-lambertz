@@ -6,8 +6,18 @@ export default function Kursprogramm() {
   const variant = "secondary";
 
   const kurse = [
-    { wochentag: "Donnerstag", uhrzeit: "19:30 Uhr", beginn: "ab 09.01.25" },
-    { wochentag: "Sonntag", uhrzeit: "15:30 Uhr", beginn: "ab 12.01.25" },
+    {
+      kurs: "Grundkurs Einsteiger",
+      wochentag: "Donnerstag",
+      uhrzeit: "19:30 Uhr",
+      beginn: "09.01.2025",
+    },
+    {
+      kurs: "Grundkurs Einsteiger",
+      wochentag: "Sonntag",
+      uhrzeit: "15:30 Uhr",
+      beginn: "12.01.2025",
+    },
   ];
 
   return (
@@ -28,7 +38,7 @@ export default function Kursprogramm() {
       </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        {kurse.map(({ wochentag, uhrzeit, beginn }) => (
+        {kurse.map(({ kurs, wochentag, uhrzeit, beginn }) => (
           <div
             key={`${wochentag}-${uhrzeit}`}
             className="bg-base-100 border border-base-200 rounded-lg p-4 shadow-md"
@@ -38,9 +48,14 @@ export default function Kursprogramm() {
               <span className="font-medium">Uhrzeit:</span> {uhrzeit}
             </p>
             <p>
-              <span className="font-medium">Beginn:</span> {beginn}
+              <span className="font-medium">Beginn:</span> ab {beginn}
             </p>
-            <Link href="/kontakt" className="btn btn-secondary btn-sm mt-2">
+            <Link
+              href={`/kursprogramm/anmelden?kurs=${encodeURIComponent(kurs)}&wochentag=${encodeURIComponent(
+                wochentag,
+              )}&uhrzeit=${encodeURIComponent(uhrzeit)}&beginn=${encodeURIComponent(beginn)}`}
+              className="btn btn-secondary btn-sm mt-2"
+            >
               Anmelden →
             </Link>
           </div>

@@ -2,11 +2,9 @@
 
 import PageSection from "@/lib/components/molecules/PageSection";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Kontakt() {
   const variant = "primary";
-  const [agreed, setAgreed] = useState(false);
 
   return (
     <PageSection title="Kontakt" variant={variant}>
@@ -57,7 +55,11 @@ export default function Kontakt() {
           action="https://api.web3forms.com/submit"
           method="POST"
         >
-          <input type="hidden" name="access_key" value="CONTACT_WEB3FORMS_API_KEY" />
+          <input
+            type="hidden"
+            name="access_key"
+            value="CONTACT_WEB3FORMS_API_KEY"
+          />
 
           <fieldset className="flex gap-6">
             <legend className="text-sm font-medium">Anrede:</legend>
