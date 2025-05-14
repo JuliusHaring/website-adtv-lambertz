@@ -98,7 +98,7 @@ export default function Header() {
               {title}
             </Link>
           ))}
-          <div className="flex items-center gap-2 mt-4">
+          <div className="place-items-center gap-2 mt-4">
             <span className="text-sm">Theme:</span>
             <label className="cursor-pointer grid place-items-center">
               <input
