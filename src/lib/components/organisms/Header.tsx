@@ -26,9 +26,9 @@ export default function Header() {
             <Image
               clickToOpen={false}
               alt="Logo"
-              width={40}
-              height={40}
-              src="/logo.png"
+              width={30}
+              height={30}
+              src="/logo_transparent.png"
             />
             ADTV Tanzschule Lambertz
           </span>
