@@ -56,10 +56,7 @@ export default function Kursprogramm() {
       </p>
       <div className="grid gap-4 sm:grid-cols-2">
         {kurse.map(({ kurs, wochentag, uhrzeit, beginn }) => (
-          <div
-            key={`${wochentag}-${uhrzeit}`}
-            className="bg-base-100 border border-base-200 rounded-lg p-4 shadow-md"
-          >
+          <Card hover={false} key={`${wochentag}-${uhrzeit}`}>
             <p className="text-lg font-semibold">{wochentag}</p>
             <p>
               <span className="font-medium">Uhrzeit:</span> {uhrzeit}
@@ -75,7 +72,7 @@ export default function Kursprogramm() {
             >
               Anmelden →
             </Link>
-          </div>
+          </Card>
         ))}
       </div>
       <Headline level={3} variant={variant}>
