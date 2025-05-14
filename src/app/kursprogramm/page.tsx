@@ -1,4 +1,5 @@
 import Headline from "@/lib/components/atoms/Headline";
+import Card from "@/lib/components/molecules/Card";
 import PageSection from "@/lib/components/molecules/PageSection";
 import Link from "next/link";
 
@@ -45,7 +46,6 @@ export default function Kursprogramm() {
         die folgende Tänze kennen: Wiener Walzer, Langsamer Walzer, Discofox,
         Foxtrott, Boogie, Tango, Cha Cha Cha, Rumba, Salsa.
       </p>
-
       <p>
         Sie bestimmen die Länge des Kurses. Durch die monatliche Zahlweise in
         Kombination mit unseren kurzen Kündigungsfristen (
@@ -54,7 +54,6 @@ export default function Kursprogramm() {
         </Link>
         ) entscheiden Sie selber, ob Ihr Kurs 4 Wochen oder 3 Monate dauert.
       </p>
-
       <div className="grid gap-4 sm:grid-cols-2">
         {kurse.map(({ kurs, wochentag, uhrzeit, beginn }) => (
           <div
@@ -79,25 +78,41 @@ export default function Kursprogramm() {
           </div>
         ))}
       </div>
-
       <Headline level={3} variant={variant}>
         Konditionen
       </Headline>
-
-      <ul>
-        <li>Kosten: 33,- € pro Person und Monat</li>
-        <li>
-          Studententarif: 25,- € pro Person und Monat (mit Studierendenausweis)
-        </li>
-        <li>
-          Mindestens 1x pro Woche Unterricht außer in Schließzeiten und an
-          Feiertagen
-        </li>
-        <li>Nachholtermine bei Ausfall durch Urlaub oder Krankheit</li>
-        <li>Teilnahme an Parallelkursen derselben Stufe kostenlos</li>
-        <li>Kostenlose Schnupperstunde nach Absprache möglich</li>
-        <li>Kündigung 4 Wochen zum Monatsende möglich</li>
-      </ul>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Card className="p-4">
+          <p className="font-semibold">Kosten</p>
+          <p>33,- € pro Person und Monat</p>
+        </Card>
+        <Card className="p-4">
+          <p className="font-semibold">Studententarif</p>
+          <p>25,- € pro Person und Monat (mit Studierendenausweis)</p>
+        </Card>
+        <Card className="p-4">
+          <p className="font-semibold">Regelunterricht</p>
+          <p>
+            Mindestens 1x pro Woche außer in Schließzeiten und an Feiertagen
+          </p>
+        </Card>
+        <Card className="p-4">
+          <p className="font-semibold">Nachholtermine</p>
+          <p>Bei Ausfall durch Urlaub oder Krankheit</p>
+        </Card>
+        <Card className="p-4">
+          <p className="font-semibold">Parallelkurse</p>
+          <p>Teilnahme an Kursen derselben Stufe kostenlos</p>
+        </Card>
+        <Card className="p-4">
+          <p className="font-semibold">Schnupperstunde</p>
+          <p>Kostenlos nach Absprache</p>
+        </Card>
+        <Card className="p-4 sm:col-span-2">
+          <p className="font-semibold">Kündigung</p>
+          <p>4 Wochen zum Monatsende möglich</p>
+        </Card>
+      </div>{" "}
     </PageSection>
   );
 }
