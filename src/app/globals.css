@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@import "./theme.css";
 
 @media print {
   .no-print {

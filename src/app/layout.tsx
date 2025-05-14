@@ -73,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" data-theme="light">
+    <html lang="de" data-theme="lambertz">
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link
